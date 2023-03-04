@@ -1,0 +1,477 @@
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('fonts/icomoon.ttf?geuk6e') format('truetype'),
+    url('fonts/icomoon.woff?geuk6e') format('woff'),
+    url('fonts/icomoon.svg?geuk6e#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="zcIcon-"], [class*=" zcIcon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zcIcon-active-User:before {
+  content: "\e901";
+}
+.zcIcon-Activity:before {
+  content: "\e902";
+}
+.zcIcon-Align-Center:before {
+  content: "\e903";
+}
+.zcIcon-Align-left:before {
+  content: "\e904";
+}
+.zcIcon-Align-Right:before {
+  content: "\e905";
+}
+.zcIcon-Analytic:before {
+  content: "\e906";
+}
+.zcIcon-Analytins-2:before {
+  content: "\e900";
+}
+.zcIcon-Annoucement:before {
+  content: "\e907";
+}
+.zcIcon-Archive:before {
+  content: "\e908";
+}
+.zcIcon-Arrow-Bold:before {
+  content: "\e909";
+}
+.zcIcon-Arrow-Chevron:before {
+  content: "\e90a";
+}
+.zcIcon-Arrow-long:before {
+  content: "\e90b";
+}
+.zcIcon-Bar-Chart:before {
+  content: "\e90c";
+}
+.zcIcon-BLog:before {
+  content: "\e90d";
+}
+.zcIcon-BLog-1:before {
+  content: "\e90e";
+}
+.zcIcon-Calendar-check:before {
+  content: "\e90f";
+}
+.zcIcon-Calendar:before {
+  content: "\e910";
+}
+.zcIcon-Calender-minus:before {
+  content: "\e911";
+}
+.zcIcon-Calender-time:before {
+  content: "\e912";
+}
+.zcIcon-chat-1:before {
+  content: "\e913";
+}
+.zcIcon-Chat-with-alert .path1:before {
+  content: "\e914";
+  color: rgb(7, 15, 33);
+}
+.zcIcon-Chat-with-alert .path2:before {
+  content: "\e915";
+  margin-left: -1em;
+  color: rgb(231, 73, 38);
+}
+.zcIcon-Chat:before {
+  content: "\e916";
+}
+.zcIcon-Check-circle-fill:before {
+  content: "\e917";
+}
+.zcIcon-Check-circle:before {
+  content: "\e918";
+}
+.zcIcon-Check:before {
+  content: "\e919";
+}
+.zcIcon-Checklist-2:before {
+  content: "\e91a";
+}
+.zcIcon-Checklist:before {
+  content: "\e91b";
+}
+.zcIcon-chevron-vertical:before {
+  content: "\e91c";
+}
+.zcIcon-Clock:before {
+  content: "\e91d";
+}
+.zcIcon-Close-circle:before {
+  content: "\e91e";
+}
+.zcIcon-Close:before {
+  content: "\e91f";
+}
+.zcIcon-Code:before {
+  content: "\e920";
+}
+.zcIcon-Collaspe-1:before {
+  content: "\e921";
+}
+.zcIcon-Convert:before {
+  content: "\e922";
+}
+.zcIcon-Copy:before {
+  content: "\e923";
+}
+.zcIcon-Credit-card:before {
+  content: "\e924";
+}
+.zcIcon-Customer-care:before {
+  content: "\e925";
+}
+.zcIcon-CV-Profile:before {
+  content: "\e926";
+}
+.zcIcon-Dashboad:before {
+  content: "\e927";
+}
+.zcIcon-Data:before {
+  content: "\e928";
+}
+.zcIcon-Dataflow:before {
+  content: "\e929";
+}
+.zcIcon-Delete:before {
+  content: "\e92a";
+}
+.zcIcon-description:before {
+  content: "\e92b";
+}
+.zcIcon-Design:before {
+  content: "\e92c";
+}
+.zcIcon-Developer-hub:before {
+  content: "\e92d";
+}
+.zcIcon-Documents:before {
+  content: "\e92e";
+}
+.zcIcon-Double-arrow:before {
+  content: "\e92f";
+}
+.zcIcon-double-file:before {
+  content: "\e930";
+}
+.zcIcon-Drag-Vertical:before {
+  content: "\e931";
+}
+.zcIcon-Edit-pencil:before {
+  content: "\e932";
+}
+.zcIcon-Edit:before {
+  content: "\e933";
+}
+.zcIcon-Embed:before {
+  content: "\e934";
+}
+.zcIcon-emoji-plus:before {
+  content: "\e935";
+}
+.zcIcon-Emoji:before {
+  content: "\e936";
+}
+.zcIcon-Employees:before {
+  content: "\e937";
+}
+.zcIcon-Expand:before {
+  content: "\e938";
+}
+.zcIcon-Eye-off:before {
+  content: "\e939";
+}
+.zcIcon-Eye-on:before {
+  content: "\e93a";
+}
+.zcIcon-File-check:before {
+  content: "\e93b";
+}
+.zcIcon-File-edit:before {
+  content: "\e93c";
+}
+.zcIcon-FIlter:before {
+  content: "\e93d";
+}
+.zcIcon-Folder .path1:before {
+  content: "\e93e";
+  color: rgb(7, 15, 33);
+}
+.zcIcon-Folder .path2:before {
+  content: "\e93f";
+  margin-left: -1.5em;
+  color: rgb(7, 15, 33);
+}
+.zcIcon-Folder .path3:before {
+  content: "\e940";
+  margin-left: -1.5em;
+  color: rgb(199, 204, 216);
+}
+.zcIcon-Folder .path4:before {
+  content: "\e941";
+  margin-left: -1.5em;
+  color: rgb(76, 86, 111);
+}
+.zcIcon-Font-Bold:before {
+  content: "\e942";
+}
+.zcIcon-Font-Italic:before {
+  content: "\e943";
+}
+.zcIcon-Font-size:before {
+  content: "\e944";
+}
+.zcIcon-Font-Style:before {
+  content: "\e945";
+}
+.zcIcon-forbidden:before {
+  content: "\e946";
+}
+.zcIcon-General:before {
+  content: "\e947";
+}
+.zcIcon-Goods:before {
+  content: "\e948";
+}
+.zcIcon-Help:before {
+  content: "\e949";
+}
+.zcIcon-Home:before {
+  content: "\e94a";
+}
+.zcIcon-Image-2:before {
+  content: "\e94b";
+}
+.zcIcon-Image:before {
+  content: "\e94c";
+}
+.zcIcon-inbox:before {
+  content: "\e94d";
+}
+.zcIcon-Info:before {
+  content: "\e94e";
+}
+.zcIcon-Integrations:before {
+  content: "\e94f";
+}
+.zcIcon-invoice:before {
+  content: "\e950";
+}
+.zcIcon-Justify:before {
+  content: "\e951";
+}
+.zcIcon-Leaf:before {
+  content: "\e952";
+}
+.zcIcon-Lifesaver:before {
+  content: "\e953";
+}
+.zcIcon-Link-Break:before {
+  content: "\e954";
+}
+.zcIcon-Link-chain:before {
+  content: "\e955";
+}
+.zcIcon-Link:before {
+  content: "\e956";
+}
+.zcIcon-Linked-up:before {
+  content: "\e957";
+}
+.zcIcon-List-bullet:before {
+  content: "\e958";
+}
+.zcIcon-List:before {
+  content: "\e959";
+}
+.zcIcon-Locations:before {
+  content: "\e95a";
+}
+.zcIcon-Lock-Open:before {
+  content: "\e95b";
+}
+.zcIcon-Lock:before {
+  content: "\e95c";
+}
+.zcIcon-magic-wand:before {
+  content: "\e95d";
+}
+.zcIcon-marketing:before {
+  content: "\e95e";
+}
+.zcIcon-Megaphone-Social-post:before {
+  content: "\e95f";
+}
+.zcIcon-Menu-Dot:before {
+  content: "\e960";
+}
+.zcIcon-Message-expand:before {
+  content: "\e961";
+}
+.zcIcon-Message-seen:before {
+  content: "\e962";
+}
+.zcIcon-Message-unseen:before {
+  content: "\e963";
+}
+.zcIcon-Message:before {
+  content: "\e964";
+}
+.zcIcon-MoveFolder:before {
+  content: "\e965";
+}
+.zcIcon-networking:before {
+  content: "\e966";
+}
+.zcIcon-Notifications:before {
+  content: "\e967";
+}
+.zcIcon-Partner:before {
+  content: "\e968";
+}
+.zcIcon-Pinned:before {
+  content: "\e969";
+}
+.zcIcon-Pipeline:before {
+  content: "\e96a";
+}
+.zcIcon-Plus-circle:before {
+  content: "\e96b";
+}
+.zcIcon-Plus:before {
+  content: "\e96c";
+}
+.zcIcon-Recurring-2:before {
+  content: "\e96d";
+}
+.zcIcon-Redo:before {
+  content: "\e96e";
+}
+.zcIcon-Refresh:before {
+  content: "\e96f";
+}
+.zcIcon-Reminder:before {
+  content: "\e970";
+}
+.zcIcon-save:before {
+  content: "\e971";
+}
+.zcIcon-Search:before {
+  content: "\e972";
+}
+.zcIcon-Section:before {
+  content: "\e973";
+}
+.zcIcon-Segments:before {
+  content: "\e974";
+}
+.zcIcon-Send-Bold:before {
+  content: "\e975";
+}
+.zcIcon-Send:before {
+  content: "\e976";
+}
+.zcIcon-Settings:before {
+  content: "\e977";
+}
+.zcIcon-Shield-security:before {
+  content: "\e978";
+}
+.zcIcon-Snooze:before {
+  content: "\e979";
+}
+.zcIcon-social-media:before {
+  content: "\e97a";
+}
+.zcIcon-Sort-by:before {
+  content: "\e97b";
+}
+.zcIcon-Strikethrough:before {
+  content: "\e97c";
+}
+.zcIcon-Suggestions:before {
+  content: "\e97d";
+}
+.zcIcon-Target:before {
+  content: "\e97e";
+}
+.zcIcon-Task:before {
+  content: "\e97f";
+}
+.zcIcon-Team:before {
+  content: "\e980";
+}
+.zcIcon-Thumbs-up-Bold:before {
+  content: "\e981";
+}
+.zcIcon-Thumbs-up:before {
+  content: "\e982";
+}
+.zcIcon-Time-Recurring:before {
+  content: "\e983";
+}
+.zcIcon-Underline:before {
+  content: "\e984";
+}
+.zcIcon-Undo:before {
+  content: "\e985";
+}
+.zcIcon-up-down:before {
+  content: "\e986";
+}
+.zcIcon-URL:before {
+  content: "\e987";
+}
+.zcIcon-User-group:before {
+  content: "\e988";
+}
+.zcIcon-user-heart:before {
+  content: "\e989";
+}
+.zcIcon-User-Lead:before {
+  content: "\e98a";
+}
+.zcIcon-User-line:before {
+  content: "\e98b";
+}
+.zcIcon-User-list:before {
+  content: "\e98c";
+}
+.zcIcon-User-Share:before {
+  content: "\e98d";
+}
+.zcIcon-Userstar:before {
+  content: "\e98e";
+}
+.zcIcon-Webinar:before {
+  content: "\e98f";
+}
+.zcIcon-Workflow:before {
+  content: "\e990";
+}
+.zcIcon-World-Clock:before {
+  content: "\e991";
+}
+.zcIcon-World-map:before {
+  content: "\e992";
+}

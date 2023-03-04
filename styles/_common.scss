@@ -1,0 +1,29 @@
+.status {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: var(--secondary);
+
+    &.sm {
+        width: 10px;
+        height: 10px;
+    }
+
+    &.lg {
+        width: 14px;
+        height: 14px;
+    }
+
+    &.active {
+        background: var(--success);
+    }
+
+    &.away {
+        background: var(--warning);
+    }
+
+    &.offline {
+        background: var(--danger);
+    }
+}
