@@ -6,13 +6,13 @@ export default function BrandBox(props) {
     let initialsRef = useRef(null);
     return (
         <div className="brand-box">
-            <strong className="brand-title">
+            <button type="button" className="brand-title btn btn-flat">
                 <span className="status active"></span>
                 <span className="brand-name">{brandName}</span>
                 <span className="brand-initials" ref={initialsRef} title={brandName}>
                     {initials}
                 </span>
-            </strong>
+            </button>
             <button className="btn-collapse btn btn-sm btn-link btn-icon" onClick={props.collapseOn}>
                 <span className="zcIcon-Double-arrow"></span>
             </button>

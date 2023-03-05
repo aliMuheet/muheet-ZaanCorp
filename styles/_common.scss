@@ -1,29 +1,200 @@
-.status {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 100%;
-    background: var(--secondary);
+.page-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+}
 
-    &.sm {
-        width: 10px;
-        height: 10px;
+.main-wrapper {
+    flex-grow: 1;
+    display: flex;
+}
+.main-content {
+    flex-grow: 1;
+
+    .main-content-header {
+        border-bottom: 1px solid var(--border-color);
+        background: var(--white);
+        padding: 10px 30px;
+        z-index: 1;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        min-height: 69px;
+        @media screen and (max-width: 1279px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .page-title {
+            margin: 0 20px 0 0;
+        }
+
+        .header-content-wrap {
+            flex-grow: 1;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+
+            @media screen and (max-width: 575px) {
+                width: 100%;
+            }
+        }
     }
 
-    &.lg {
-        width: 14px;
-        height: 14px;
+    .main-content-body {
+        padding: 15px 30px;
+        flex-grow: 1;
+        flex-shrink: 0;
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: calc(100vh - 145px);
+        @media screen and (max-width: 1279px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+.workflow-tabs {
+    display: flex;
+    margin: 0 -2px;
+    padding: 0;
+    list-style: none;
+
+    > li {
+        padding: 2px;
+
+        &.active {
+            .btn {
+                background: var(--primary);
+                color: var(--white);
+            }
+        }
     }
 
-    &.active {
-        background: var(--success);
+    .btn {
+        &:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+    }
+}
+
+.action-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-left: 40px;
+    position: relative;
+
+    @media screen and (max-width: 575px) {
+        padding-left: 0;
     }
 
-    &.away {
-        background: var(--warning);
+    @media screen and (min-width: 576px) {
+        &:before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            width: 1px;
+            height: 30px;
+            background: var(--border-color);
+        }
+    }
+}
+
+.users-list {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -2px;
+    padding: 0;
+    list-style: none;
+
+    > li {
+        padding: 2px;
     }
 
-    &.offline {
-        background: var(--danger);
+    .user-box {
+        display: block;
+        position: relative;
+
+        .user-count {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 14px;
+            text-align: center;
+            border-radius: 100%;
+            min-width: 14px;
+            background: var(--primary);
+            color: var(--white);
+        }
+    }
+}
+
+.action-list-holder {
+    position: relative;
+
+    .action-opener {
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+    }
+
+    .action-collapse & {
+        .action-list {
+            @media screen and (max-width: 991px) {
+                opacity: 1;
+                visibility: visible;
+                transform: scaleY(1);
+            }
+        }
+    }
+
+    .action-list {
+        margin: 0 -6px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+
+        @media screen and (max-width: 991px) {
+            position: absolute;
+            top: 49px;
+            right: -10px;
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            width: 270px;
+            padding: 15px;
+            max-height: calc(100vh - 68px);
+            overflow-x: auto;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: scaleY(0.5);
+            transform-origin: top;
+            transition: var(--base-trasition);
+        }
+
+        > li {
+            padding: 4px 6px;
+        }
+    }
+}
+
+.tab-content {
+    position: relative;
+
+    .tab-element {
+        display: none;
+
+        &.active {
+            display: block;
+        }
     }
 }

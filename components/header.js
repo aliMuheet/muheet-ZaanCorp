@@ -2,7 +2,7 @@ import { useState } from "react";
 import Avatar from "./avatar";
 import avatarImg from "../public/assets/images/avatar.png";
 import BrandBox from "./brandBox";
-import Users from "./users";
+import Profiles from "./profiles";
 
 export default function Header(props) {
     const [value, setValue] = useState("");
@@ -18,48 +18,53 @@ export default function Header(props) {
                 <div className="header-top-bar">
                     <div className="option-bar-wrapper">
                         <ul className="top-options-bar">
-                            <li>
-                                <Users />
+                            <li className="profiles-list">
+                                <Profiles />
                             </li>
                             <li>
                                 <button className="btn btn-outline btn-secondary btn-icon btn-lg">
-                                    <span class="zcIcon-Suggestions"></span>
+                                    <span className="zcIcon-Suggestions"></span>
                                 </button>
                             </li>
                             <li>
                                 <button className="btn btn-primary btn-icon btn-lg">
-                                    <span class="zcIcon-Plus"></span>
+                                    <span className="zcIcon-Plus"></span>
                                 </button>
                             </li>
                             <li className="search-box">
                                 <div className="search-input-wrap">
-                                    <span class="zcIcon-Search icon"></span>
+                                    <span className="zcIcon-Search icon"></span>
                                     <input type="text" name="search" onChange={searchHandler} value={value} className="form-control lg" />
                                 </div>
                             </li>
                             <li>
                                 <button className="btn btn-outline btn-secondary btn-icon btn-lg">
-                                    <span class="zcIcon-Annoucement"></span>
+                                    <span className="zcIcon-Annoucement"></span>
                                 </button>
                             </li>
                             <li>
                                 <button className="btn btn-outline btn-secondary btn-icon btn-lg">
-                                    <span class="zcIcon-Calendar"></span>
+                                    <span className="zcIcon-Calendar"></span>
                                 </button>
                             </li>
                             <li>
                                 <button className="btn btn-outline btn-secondary btn-icon btn-lg">
-                                    <span class="zcIcon-Chat-with-alert">
-                                        <span class="path1"></span>
-                                        {chatAlert ? <span class="path2"></span> : ""}
+                                    <span className="zcIcon-Chat-with-alert">
+                                        <span className="path1"></span>
+                                        {chatAlert ? <span className="path2"></span> : ""}
                                     </span>
                                 </button>
                             </li>
                         </ul>
                     </div>
                     <div className="profile-box">
-                        <button type="button" className="btn btn-lg btn-flat">
+                        <button type="button" className="btn btn-lg btn-flat" onClick={props.userCollapseOn}>
                             <Avatar image={avatarImg} size="lg" />
+                        </button>
+                    </div>
+                    <div className="menu-opener">
+                        <button type="button" className="btn btn-outline btn-secondary btn-icon btn-lg" onClick={props.menuDropOn}>
+                            <span className="zcIcon-Justify"></span>
                         </button>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import Avatar from "./avatar";
 import avatarImg from "../public/assets/images/avatar.png";
-export default function Users() {
-    var users = [
+export default function ProfilesList() {
+    let profilesList = [
         {
             id: "u01",
             image: avatarImg,
@@ -18,18 +18,18 @@ export default function Users() {
     return (
         <div className="profile-notification">
             <div className="profiles">
-                {users.map((user, index) => {
+                {profilesList.map((item, index) => {
                     return (
-                        <div className="user-box" key={index}>
-                            <Avatar image={user.image} size="sm" />
-                            <span className={`count-label ${user.status ? user.status : ""}`}>{user.count}</span>
+                        <div className="profile-box" key={index}>
+                            <Avatar image={item.image} size="sm" />
+                            <span className={`count-label ${item.status ? item.status : ""}`}>{item.count}</span>
                         </div>
                     );
                 })}
             </div>
             <div className="addon">
                 <button className="btn btn-secondary">
-                    <span class="zcIcon-Arrow-Chevron"></span>
+                    <span className="zcIcon-Arrow-Chevron"></span>
                 </button>
             </div>
         </div>
