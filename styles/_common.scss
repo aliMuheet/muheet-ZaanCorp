@@ -19,7 +19,8 @@
         display: flex;
         flex-flow: row wrap;
         align-items: center;
-        min-height: 69px;
+        min-height: 70px;
+        position: relative;
         @media screen and (max-width: 1279px) {
             padding-left: 15px;
             padding-right: 15px;
@@ -42,15 +43,14 @@
     }
 
     .main-content-body {
-        padding: 15px 30px;
+        padding: 30px;
         flex-grow: 1;
         flex-shrink: 0;
         overflow: hidden;
         overflow-y: auto;
-        max-height: calc(100vh - 145px);
+        max-height: calc(100vh - 150px);
         @media screen and (max-width: 1279px) {
-            padding-left: 15px;
-            padding-right: 15px;
+            padding: 15px;
         }
     }
 }
@@ -83,17 +83,16 @@
 .action-wrapper {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-between;
     flex-grow: 1;
     padding-left: 40px;
-    position: relative;
+    align-items: center;
 
     @media screen and (max-width: 575px) {
-        padding-left: 0;
+        padding-left: 10px;
     }
 
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: 992px) {
+        position: relative;
         &:before {
             content: "";
             position: absolute;
@@ -137,8 +136,16 @@
     }
 }
 
-.action-list-holder {
-    position: relative;
+.action-drop-holder {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    width: 100%;
+
+    @media screen and (min-width: 992px) {
+        justify-content: unset;
+        position: relative;
+    }
 
     .action-opener {
         @media screen and (min-width: 992px) {
@@ -147,7 +154,7 @@
     }
 
     .action-collapse & {
-        .action-list {
+        .action-drop {
             @media screen and (max-width: 991px) {
                 opacity: 1;
                 visibility: visible;
@@ -156,17 +163,16 @@
         }
     }
 
-    .action-list {
-        margin: 0 -6px;
-        padding: 0;
-        list-style: none;
+    .action-drop {
+        width: 100%;
         display: flex;
         flex-flow: row wrap;
-
+        align-items: center;
+        justify-content: space-between;
         @media screen and (max-width: 991px) {
             position: absolute;
-            top: 49px;
-            right: -10px;
+            top: 100%;
+            right: 0;
             background: var(--white);
             border: 1px solid var(--border-color);
             width: 270px;
@@ -180,7 +186,14 @@
             transform-origin: top;
             transition: var(--base-trasition);
         }
+    }
 
+    .action-list {
+        margin: 0 -6px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
         > li {
             padding: 4px 6px;
         }
@@ -196,5 +209,292 @@
         &.active {
             display: block;
         }
+    }
+}
+
+.wrokflow-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-gap: 8px;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 50%));
+    }
+
+    @media screen and (min-width: 992px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 33.333%));
+    }
+
+    .grid-col {
+        // padding: 4px;
+    }
+}
+
+.workflow-block {
+    background: var(--gray);
+    border-radius: var(--border-radius);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    .workflow-head,
+    .workflow-body,
+    .workflow-foot {
+        padding: 10px;
+    }
+
+    .workflow-head {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        h3 {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+            margin: 0 8px 0 0;
+
+            .count {
+                display: inline-block;
+                vertical-align: top;
+                line-height: inherit;
+                color: var(--gray-text);
+                font-weight: 400;
+            }
+        }
+    }
+
+    .workflow-option {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0 -4px;
+        list-style: none;
+        flex-grow: 1;
+
+        > li {
+            padding: 4px;
+
+            &.menu {
+                flex-grow: 1;
+                text-align: right;
+
+                .btn {
+                    margin: 0 0 0 auto;
+                }
+            }
+
+            .btn {
+                padding: 0;
+                width: auto;
+                height: auto;
+                color: var(--gray-text);
+
+                &:hover {
+                    color: var(--text-color);
+                }
+            }
+        }
+    }
+
+    .workflow-body {
+        padding-top: 0;
+        padding-bottom: 5px;
+        max-height: 600px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    .workflow-foot {
+        padding-top: 5px;
+
+        .btn-add {
+            color: var(--primary);
+            border-color: rgba(7, 15, 33, 0.1);
+            font-size: 14px;
+        }
+    }
+
+    .add-card-box {
+        position: relative;
+        margin: 0 -10px;
+        border-top: 1px solid var(--primary);
+        padding: 0 10px;
+
+        .box-head {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+
+            label {
+                margin: 0;
+                padding: 0;
+                font-weight: 600;
+            }
+
+            .btn {
+                font-size: 16px !important;
+                color: var(--danger);
+                padding: 0;
+                width: auto;
+
+                [class^="zcIcon-"],
+                [class*=" zcIcon-"] {
+                    font-size: inherit;
+                }
+            }
+        }
+
+        .input-wrap {
+            display: block;
+            margin: 0 0 10px;
+        }
+
+        .input-group {
+            display: flex;
+
+            .input-wrap {
+                padding: 0 15px 0 0;
+                margin: 0;
+                flex-grow: 1;
+            }
+
+            .btn {
+                min-width: 60px;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.cards-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    > li {
+        padding: 4px 0;
+    }
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 8px;
+    font-size: 12px;
+
+    .card-head {
+        overflow: hidden;
+        position: relative;
+        padding-right: 25px;
+
+        .card-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: var(--gray-text);
+            font-size: 16px;
+        }
+    }
+
+    .project-name {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: var(--gray-text);
+
+        .status {
+            width: 8px;
+            height: 8px;
+        }
+    }
+
+    .card-title {
+        display: block;
+        font-size: 14px;
+    }
+
+    .tag-list {
+        margin: 0 -2px;
+        padding: 6px 0;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        font-size: 11px;
+        line-height: 1;
+        align-items: center;
+
+        > li {
+            padding: 2px;
+        }
+
+        .tag {
+            min-height: 10px;
+            min-width: 52px;
+            display: block;
+            padding: 2px 6px;
+            background: var(--cream);
+            border-radius: var(--border-radius);
+
+            &.primary {
+                background: #deefff;
+            }
+
+            &.secondary {
+                background: #ffdefc;
+            }
+
+            &.warning {
+                background: #ffc690;
+            }
+
+            &.info {
+                background: var(--cream);
+            }
+        }
+    }
+
+    .meta-list {
+        margin: 0 -5px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        // color: #6a6f7a;
+
+        li {
+            padding: 2px 5px;
+        }
+
+        .meta-box {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .icon {
+            font-size: 16px;
+        }
+    }
+
+    .date-created {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 14px;
+        padding: 8px;
+        border-radius: var(--border-radius);
+        background: var(--border-color);
+    }
+
+    .card-foot {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0 0;
     }
 }

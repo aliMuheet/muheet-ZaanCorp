@@ -18,6 +18,7 @@
     --gray: #eff2f5;
     --gray-dark: #7b818b;
     --gray-light: #ebecee;
+    --gray-text: #7b808b;
 
     --nav-color: #6a6f7a;
 
@@ -37,6 +38,12 @@
 }
 
 @import "mixin";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 %headings {
     font-weight: 600;
@@ -72,10 +79,8 @@ h6 {
     font-size: var(--font-size-h6);
 }
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+p {
+    margin: 0 0 10px;
 }
 
 html,
@@ -139,6 +144,12 @@ a {
         display: block;
         padding: 0 5px;
         flex-grow: 1;
+    }
+
+    &.btn-full {
+        display: flex;
+        width: 100%;
+        text-align: left;
     }
 
     &.btn-sm {
@@ -324,12 +335,30 @@ a {
         background: var(--success);
     }
 
-    &.away {
+    &.away,
+    &.warning {
         background: var(--warning);
     }
 
-    &.offline {
+    &.offline,
+    &.danger {
         background: var(--danger);
+    }
+
+    &.primary {
+        background: var(--primary);
+    }
+
+    &.info {
+        background: var(--info);
+    }
+
+    &.success {
+        background: var(--success);
+    }
+
+    &.violet {
+        background: var(--violet);
     }
 }
 
@@ -375,6 +404,7 @@ a {
     line-height: 18px;
     font-weight: 400;
     padding: 8px 14px;
+    transition: var(--base-trasition);
 
     &.lg {
         height: 40px;
@@ -386,6 +416,10 @@ a {
         height: 30px;
         padding-top: 5px;
         padding-bottom: 5px;
+    }
+
+    &:focus {
+        border-color: var(--primary);
     }
 }
 

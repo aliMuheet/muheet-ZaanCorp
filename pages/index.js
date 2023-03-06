@@ -1,21 +1,38 @@
 import PageContentBody from "@/components/pageContentBody";
 import PageContentHeader from "@/components/pageContentHeader";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Avatar from "@/components/avatar";
 import avatarImg from "../public/assets/images/avatar.png";
 
-export default function Home(props) {
-    const [activeTab, setActiveTab] = useState(1);
-    const [actionDrop, setActionDrop] = useState(false);
+import Backlog from "@/components/backlog";
 
+export default function Home(props) {
+    // Tabs
+    const [activeTab, setActiveTab] = useState(1);
     function handleTabClick(index) {
         setActiveTab(index);
     }
 
-    const actionDropOn = (e) => {
-        e.preventDefault();
-        setActionDrop(!actionDrop);
+    // Filters options
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef();
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [dropdownRef]);
+
+    const handleToggle = () => {
+        setIsOpen(!isOpen);
     };
 
     return (
@@ -44,60 +61,66 @@ export default function Home(props) {
                     </li>
                 </ul>
                 {activeTab === 1 && (
-                    <div className={`action-wrapper ${actionDrop ? "action-collapse" : ""}`}>
-                        <ul className="users-list">
-                            {props.users.map((user, index) => {
-                                return (
-                                    <li key={index}>
-                                        <div className="user-box">
-                                            <Avatar image={user.image} size="sm" />
-                                            <span className="user-count">{user.count}</span>
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                        <div className="action-list-holder">
-                            <button className="action-opener btn btn-sm btn-secondary btn-icon btn-circle" onClick={actionDropOn}>
+                    <div className={`action-wrapper ${isOpen ? "action-collapse" : ""}`}>
+                        <div className="action-drop-holder" ref={dropdownRef}>
+                            <button className="action-opener btn btn-sm btn-secondary btn-icon btn-circle" onClick={handleToggle}>
                                 <span className="icon zcIcon-Settings"></span>
                             </button>
-                            <ul className="action-list">
-                                <li>
-                                    <button className="btn btn-outline btn-secondary btn-icon btn-lg">
-                                        <span className="zcIcon-Pinned text-warning"></span>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button className="btn btn-outline btn-secondary btn-icon btn-lg">
-                                        <span className="zcIcon-double-file text-violet"></span>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button className="btn btn-outline btn-secondary btn-lg">
-                                        <span className="zcIcon-save"></span>
-                                        <span className="btn-text">Views</span>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button className="btn btn-outline btn-secondary btn-lg">
-                                        <span className="zcIcon-FIlter"></span>
-                                        <span className="btn-text">Filter</span>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button className="btn btn-outline btn-secondary btn-lg">
-                                        <span className="zcIcon-Sort-by"></span>
-                                        <span className="btn-text">Sort by</span>
-                                    </button>
-                                </li>
-                            </ul>
+                            <div className="action-drop">
+                                <ul className="users-list">
+                                    {props.users.map((user, index) => {
+                                        return (
+                                            <li key={index}>
+                                                <div className="user-box">
+                                                    <Avatar image={user.image} size="sm" />
+                                                    <span className="user-count">{user.count}</span>
+                                                </div>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                                <ul className="action-list">
+                                    <li>
+                                        <button className="btn btn-outline btn-secondary btn-icon btn-lg">
+                                            <span className="zcIcon-Pinned text-warning"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button className="btn btn-outline btn-secondary btn-icon btn-lg">
+                                            <span className="zcIcon-double-file text-violet"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button className="btn btn-outline btn-secondary btn-lg">
+                                            <span className="zcIcon-save"></span>
+                                            <span className="btn-text">Views</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button className="btn btn-outline btn-secondary btn-lg">
+                                            <span className="zcIcon-FIlter"></span>
+                                            <span className="btn-text">Filter</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button className="btn btn-outline btn-secondary btn-lg">
+                                            <span className="zcIcon-Sort-by"></span>
+                                            <span className="btn-text">Sort by</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 )}
             </PageContentHeader>
             <PageContentBody>
                 <div className="tab-content">
-                    <div className={`tab-element ${activeTab === 1 ? "active" : ""}`}>Tab 1 content</div>
+                    <div className={`tab-element ${activeTab === 1 ? "active" : ""}`}>
+                        <div className="wrokflow-grid">
+                            <Backlog />
+                        </div>
+                    </div>
                     <div className={`tab-element ${activeTab === 2 ? "active" : ""}`}>Tab 2 content</div>
                     <div className={`tab-element ${activeTab === 3 ? "active" : ""}`}>Tab 3 content</div>
                     <div className={`tab-element ${activeTab === 4 ? "active" : ""}`}>Tab 4 content</div>
