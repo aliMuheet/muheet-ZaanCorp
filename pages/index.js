@@ -6,6 +6,8 @@ import Avatar from "@/components/avatar";
 import avatarImg from "../public/assets/images/avatar.png";
 
 import Backlog from "@/components/backlog";
+import Todo from "@/components/todo";
+import Inprocess from "@/components/inprocess";
 
 export default function Home(props) {
     // Tabs
@@ -119,6 +121,8 @@ export default function Home(props) {
                     <div className={`tab-element ${activeTab === 1 ? "active" : ""}`}>
                         <div className="wrokflow-grid">
                             <Backlog />
+                            <Todo />
+                            <Inprocess />
                         </div>
                     </div>
                     <div className={`tab-element ${activeTab === 2 ? "active" : ""}`}>Tab 2 content</div>

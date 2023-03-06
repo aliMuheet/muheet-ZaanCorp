@@ -223,7 +223,7 @@
     }
 
     @media screen and (min-width: 992px) {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 33.333%));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 20%));
     }
 
     .grid-col {
@@ -407,8 +407,9 @@
         color: var(--gray-text);
 
         .status {
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
+            flex-shrink: 0;
         }
     }
 

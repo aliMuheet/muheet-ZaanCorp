@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Card from "@/components/card";
 
-export default function Todo(props) {
-    const todoCardsData = [
+export default function Inprocess(props) {
+    const inprocessCardsData = [
         {
             id: 1,
             projectName: "DW4RTeam",
@@ -172,25 +172,25 @@ export default function Todo(props) {
             ],
         },
     ];
-    const [todoCards, setTodoCards] = useState(todoCardsData);
-    const [todoCardName, setTodoCardName] = useState("");
-    const [todoCategory, setTodoCategory] = useState("");
+    const [inprocessCards, setInprocessCards] = useState(inprocessCardsData);
+    const [inprocessCardName, setInprocessCardName] = useState("");
+    const [inprocessCategory, setInprocessCategory] = useState("");
 
-    const handleTodoNameChange = (event) => {
-        setTodoCardName(event.target.value);
+    const handleInprocessNameChange = (event) => {
+        setInprocessCardName(event.target.value);
     };
 
-    const handleTodoCategoryChange = (event) => {
-        const selectedTodoCategoryOption = event.target.options[event.target.selectedIndex];
-        setTodoCategory(selectedTodoCategoryOption.text);
+    const handleInprocessCategoryChange = (event) => {
+        const selectedInprocessCategoryOption = event.target.options[event.target.selectedIndex];
+        setInprocessCategory(selectedInprocessCategoryOption.text);
     };
 
-    const handleTodoAdd = (event) => {
+    const handleInprocessAdd = (event) => {
         event.preventDefault();
-        const newItem = { ...todoCards[0], cardName: todoCardName, projectName: todoCategory };
-        setTodoCards(todoCards.concat(newItem));
-        setTodoCardName("");
-        setTodoCategory("");
+        const newItem = { ...inprocessCards[0], cardName: inprocessCardName, projectName: inprocessCategory };
+        setInprocessCards(inprocessCards.concat(newItem));
+        setInprocessCardName("");
+        setInprocessCategory("");
         setIsAcitve(false);
     };
 
@@ -203,11 +203,11 @@ export default function Todo(props) {
         setIsAcitve(false);
     };
     return (
-        <div className="grid-col" data-type="Todo">
+        <div className="grid-col" data-type="Inprocess">
             <div className="workflow-block">
                 <div className="workflow-head">
                     <h3>
-                        Todo <span className="count">(2)</span>
+                        Inprocess <span className="count">(2)</span>
                     </h3>
                     <ul className="workflow-option">
                         <li>
@@ -229,7 +229,7 @@ export default function Todo(props) {
                 </div>
                 <div className="workflow-body">
                     <ul className="cards-list">
-                        {todoCards.map((card) => {
+                        {inprocessCards.map((card) => {
                             return (
                                 <li key={card.id}>
                                     <Card data={card} />
@@ -246,7 +246,7 @@ export default function Todo(props) {
                         </button>
                     )}
                     {isActive && (
-                        <form className="add-card-box" onSubmit={handleTodoAdd}>
+                        <form className="add-card-box" onSubmit={handleInprocessAdd}>
                             <div className="box-head">
                                 <label htmlFor="title">Card title</label>
                                 <button type="button" className="btn btn-flat btn-icon" onClick={handleBoxClose}>
@@ -254,11 +254,11 @@ export default function Todo(props) {
                                 </button>
                             </div>
                             <div className="input-wrap">
-                                <input type="text" placeholder="Enter Card Name" name="name" className="form-control" value={todoCardName} onChange={handleTodoNameChange} />
+                                <input type="text" placeholder="Enter Card Name" name="name" className="form-control" value={inprocessCardName} onChange={handleInprocessNameChange} />
                             </div>
                             <div className="input-group">
                                 <div className="input-wrap">
-                                    <select value={todoCategory} onChange={handleTodoCategoryChange} name="project" className="form-control">
+                                    <select value={inprocessCategory} onChange={handleInprocessCategoryChange} name="project" className="form-control">
                                         <option value="" disabled selected>
                                             Select Project
                                         </option>
