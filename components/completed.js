@@ -1,24 +1,24 @@
 import { useState } from "react";
 import Card from "@/components/card";
 
-export default function Backlog(props) {
-    const backlogCardsData = [
+export default function Completed(props) {
+    const completedCardsData = [
         {
             id: 1,
             projectName: "ContactRM",
             projectStatus: "danger",
             cardName: "Design a Website",
-            cardIcon: "zcIcon-Userstar",
+            cardIcon: "zcIcon-File-check",
             tags: [
                 {
                     tagId: "tg-1",
-                    tagTitle: "api.contactrm.com",
+                    tagTitle: "",
                     tagType: "info",
                 },
 
                 {
                     tagId: "tg-2",
-                    tagTitle: "api.contactrm",
+                    tagTitle: "",
                     tagType: "secondary",
                 },
             ],
@@ -45,62 +45,30 @@ export default function Backlog(props) {
                 },
             ],
         },
-        {
-            id: 2,
-            projectName: "AgentBook",
-            projectStatus: "warning",
-            cardName: "Design a Website",
-            cardIcon: "zcIcon-File-check",
-            tags: [
-                {
-                    tagId: "tg-1",
-                    tagTitle: "api.contactrm.com",
-                    tagType: "info",
-                },
-
-                {
-                    tagId: "tg-2",
-                    tagTitle: "api.contactrm",
-                    tagType: "secondary",
-                },
-            ],
-            metaList: [
-                {
-                    type: "ml-1",
-                    typeTitle: "Description",
-                    count: "",
-                },
-                {
-                    type: "ml-3",
-                    typeTitle: "Checklist",
-                    count: "8/9",
-                },
-            ],
-        },
     ];
-    const [backlogCards, setBacklogCards] = useState(backlogCardsData);
-    const [backlogCardName, setBacklogCardName] = useState("");
-    const [backlogCategory, setBacklogCategory] = useState("");
+    const [completedCards, setCompletedCards] = useState(completedCardsData);
+    const [completedCardName, setCompletedCardName] = useState("");
+    const [completedCategory, setCompletedCategory] = useState("");
 
-    const handleBacklogNameChange = (event) => {
-        setBacklogCardName(event.target.value);
+    const handleCompletedNameChange = (event) => {
+        setCompletedCardName(event.target.value);
     };
 
-    const handleBacklogCategoryChange = (event) => {
-        const selectedBacklogCategoryOption = event.target.options[event.target.selectedIndex];
-        setBacklogCategory(selectedBacklogCategoryOption.text);
+    const handleCompletedCategoryChange = (event) => {
+        const selectedCompletedCategoryOption = event.target.options[event.target.selectedIndex];
+        setCompletedCategory(selectedCompletedCategoryOption.text);
     };
 
-    const handleBacklogAdd = (event) => {
+    const handleCompletedAdd = (event) => {
         event.preventDefault();
-        const newItem = { ...backlogCards[0], cardName: backlogCardName, projectName: backlogCategory };
-        setBacklogCards(backlogCards.concat(newItem));
-        setBacklogCardName("");
-        setBacklogCategory("");
+        const newItem = { ...completedCards[0], cardName: completedCardName, projectName: completedCategory };
+        setCompletedCards(completedCards.concat(newItem));
+        setCompletedCardName("");
+        setCompletedCategory("");
         setIsAcitve(false);
     };
 
-    // Add Card Box Open/Close
+    // Add Card Box
     const [isActive, setIsAcitve] = useState(false);
     const handleBoxOpen = () => {
         setIsAcitve(true);
@@ -109,11 +77,11 @@ export default function Backlog(props) {
         setIsAcitve(false);
     };
     return (
-        <div className="grid-col" data-type="Backlog">
+        <div className="grid-col" data-type="Completed">
             <div className="workflow-block">
                 <div className="workflow-head">
                     <h3>
-                        Backlog <span className="count">(2)</span>
+                        Completed <span className="count">(2)</span>
                     </h3>
                     <ul className="workflow-option">
                         <li>
@@ -135,7 +103,7 @@ export default function Backlog(props) {
                 </div>
                 <div className="workflow-body">
                     <ul className="cards-list">
-                        {backlogCards.map((card) => {
+                        {completedCards.map((card) => {
                             return (
                                 <li key={card.id}>
                                     <Card data={card} />
@@ -152,7 +120,7 @@ export default function Backlog(props) {
                         </button>
                     )}
                     {isActive && (
-                        <form className="add-card-box" onSubmit={handleBacklogAdd}>
+                        <form className="add-card-box" onSubmit={handleCompletedAdd}>
                             <div className="box-head">
                                 <label htmlFor="title">Card title</label>
                                 <button type="button" className="btn btn-flat btn-icon" onClick={handleBoxClose}>
@@ -160,11 +128,11 @@ export default function Backlog(props) {
                                 </button>
                             </div>
                             <div className="input-wrap">
-                                <input type="text" placeholder="Enter Card Name" name="name" className="form-control" value={backlogCardName} onChange={handleBacklogNameChange} />
+                                <input type="text" placeholder="Enter Card Name" name="name" className="form-control" value={completedCardName} onChange={handleCompletedNameChange} />
                             </div>
                             <div className="input-group">
                                 <div className="input-wrap">
-                                    <select value={backlogCategory} onChange={handleBacklogCategoryChange} name="project" className="form-control">
+                                    <select value={completedCategory} onChange={handleCompletedCategoryChange} name="project" className="form-control">
                                         <option value="" disabled selected>
                                             Select Project
                                         </option>

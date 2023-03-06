@@ -11,15 +11,17 @@ export default function Card({ data }) {
                 <h4 className="card-title">{data.cardName}</h4>
                 {data.cardIcon && <span className={`card-icon ${data.cardIcon}`}></span>}
             </div>
-            <ul className="tag-list">
-                {data.tags.map((tag, i) => {
-                    return (
-                        <li key={i + 1}>
-                            <span className={`tag ${tag.tagType}`}>{tag.tagTitle}</span>
-                        </li>
-                    );
-                })}
-            </ul>
+            {data.tags.length != 0 && (
+                <ul className="tag-list">
+                    {data.tags.map((tag, i) => {
+                        return (
+                            <li key={i + 1}>
+                                <span className={`tag ${tag.tagType}`}>{tag.tagTitle}</span>
+                            </li>
+                        );
+                    })}
+                </ul>
+            )}
             <ul className="meta-list">
                 {data.metaList.map((meta) => {
                     let icon = "";

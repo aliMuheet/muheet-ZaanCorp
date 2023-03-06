@@ -5,23 +5,11 @@ export default function Inprocess(props) {
     const inprocessCardsData = [
         {
             id: 1,
-            projectName: "DW4RTeam",
-            projectStatus: "violet",
+            projectName: "AgentBook",
+            projectStatus: "warning",
             cardName: "Design a Website",
-            cardIcon: "zcIcon-User-Lead",
-            tags: [
-                {
-                    tagId: "tg-1",
-                    tagTitle: "",
-                    tagType: "info",
-                },
-
-                {
-                    tagId: "tg-2",
-                    tagTitle: "",
-                    tagType: "secondary",
-                },
-            ],
+            cardIcon: "zcIcon-File-check",
+            tags: [],
             metaList: [
                 {
                     type: "ml-1",
@@ -50,20 +38,8 @@ export default function Inprocess(props) {
             projectName: "Asteler.io",
             projectStatus: "info",
             cardName: "Design a Website",
-            cardIcon: "",
-            tags: [
-                {
-                    tagId: "tg-1",
-                    tagTitle: "api.contactrm.com",
-                    tagType: "info",
-                },
-
-                {
-                    tagId: "tg-2",
-                    tagTitle: "api.contactrm",
-                    tagType: "secondary",
-                },
-            ],
+            cardIcon: "zcIcon-File-check",
+            tags: [],
             metaList: [
                 {
                     type: "ml-1",
@@ -92,20 +68,8 @@ export default function Inprocess(props) {
             projectName: "ContactRM",
             projectStatus: "danger",
             cardName: "Design a Website",
-            cardIcon: "",
-            tags: [
-                {
-                    tagId: "tg-1",
-                    tagTitle: "api.contactrm.com",
-                    tagType: "info",
-                },
-
-                {
-                    tagId: "tg-2",
-                    tagTitle: "api.contactrm",
-                    tagType: "secondary",
-                },
-            ],
+            cardIcon: "zcIcon-File-check",
+            tags: [],
             metaList: [
                 {
                     type: "ml-1",
@@ -134,20 +98,68 @@ export default function Inprocess(props) {
             projectName: "ContactRM",
             projectStatus: "info",
             cardName: "Design a Website",
-            cardIcon: "",
-            tags: [
+            cardIcon: "zcIcon-File-check",
+            tags: [],
+            metaList: [
                 {
-                    tagId: "tg-1",
-                    tagTitle: "api.contactrm.com",
-                    tagType: "info",
+                    type: "ml-1",
+                    typeTitle: "Description",
+                    count: "",
                 },
-
                 {
-                    tagId: "tg-2",
-                    tagTitle: "api.contactrm",
-                    tagType: "secondary",
+                    type: "ml-2",
+                    typeTitle: "Comments",
+                    count: "12",
+                },
+                {
+                    type: "ml-3",
+                    typeTitle: "Checklist",
+                    count: "8/9",
+                },
+                {
+                    type: "ml-4",
+                    typeTitle: "Links",
+                    count: "2",
                 },
             ],
+        },
+        {
+            id: 5,
+            projectName: "ContactRM",
+            projectStatus: "info",
+            cardName: "Design a Website",
+            cardIcon: "zcIcon-File-check",
+            tags: [],
+            metaList: [
+                {
+                    type: "ml-1",
+                    typeTitle: "Description",
+                    count: "",
+                },
+                {
+                    type: "ml-2",
+                    typeTitle: "Comments",
+                    count: "12",
+                },
+                {
+                    type: "ml-3",
+                    typeTitle: "Checklist",
+                    count: "8/9",
+                },
+                {
+                    type: "ml-4",
+                    typeTitle: "Links",
+                    count: "2",
+                },
+            ],
+        },
+        {
+            id: 6,
+            projectName: "ContactRM",
+            projectStatus: "info",
+            cardName: "Design a Website",
+            cardIcon: "zcIcon-File-check",
+            tags: [],
             metaList: [
                 {
                     type: "ml-1",
@@ -207,7 +219,7 @@ export default function Inprocess(props) {
             <div className="workflow-block">
                 <div className="workflow-head">
                     <h3>
-                        Inprocess <span className="count">(2)</span>
+                        In Process <span className="count">(35)</span>
                     </h3>
                     <ul className="workflow-option">
                         <li>

@@ -8,6 +8,8 @@ import avatarImg from "../public/assets/images/avatar.png";
 import Backlog from "@/components/backlog";
 import Todo from "@/components/todo";
 import Inprocess from "@/components/inprocess";
+import Inreview from "@/components/inreview";
+import Completed from "@/components/completed";
 
 export default function Home(props) {
     // Tabs
@@ -123,6 +125,8 @@ export default function Home(props) {
                             <Backlog />
                             <Todo />
                             <Inprocess />
+                            <Inreview />
+                            <Completed />
                         </div>
                     </div>
                     <div className={`tab-element ${activeTab === 2 ? "active" : ""}`}>Tab 2 content</div>

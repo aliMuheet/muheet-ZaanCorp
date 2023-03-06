@@ -216,7 +216,7 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    grid-gap: 8px;
+    margin: 0 -4px;
 
     @media screen and (min-width: 768px) {
         grid-template-columns: repeat(auto-fit, minmax(200px, 50%));
@@ -227,7 +227,7 @@
     }
 
     .grid-col {
-        // padding: 4px;
+        padding: 4px;
     }
 }
 
@@ -389,6 +389,7 @@
         overflow: hidden;
         position: relative;
         padding-right: 25px;
+        margin-bottom: 4px;
 
         .card-icon {
             position: absolute;
@@ -420,7 +421,7 @@
 
     .tag-list {
         margin: 0 -2px;
-        padding: 6px 0;
+        padding: 2px 0 4px;
         list-style: none;
         display: flex;
         flex-flow: row wrap;
