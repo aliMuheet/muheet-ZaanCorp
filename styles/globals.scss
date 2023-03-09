@@ -5,6 +5,7 @@
     --white: #fff;
     --black: #000;
     --text-color: #070f21;
+    --text-color-rgb: 7, 15, 33;
     --heading-color: #070f21;
     --primary: #0e8cff;
     --secondary: #e6e7e8;
@@ -19,6 +20,7 @@
     --gray-dark: #7b818b;
     --gray-light: #ebecee;
     --gray-text: #7b808b;
+    --scrollbar-color : rgba(var(--text-color-rgb), 0.2);
 
     --nav-color: #6a6f7a;
 
@@ -423,6 +425,11 @@ a {
     }
 }
 
+* {
+    scrollbar-color: var(--scrollbar-color) var(--white);
+    scrollbar-width: thin;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 6px;
@@ -431,13 +438,13 @@ a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: var(--gray-light);
+    background: var(--white);
     border-radius: var(--border-radius);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--gray-dark);
+    background: var(--scrollbar-color);
     border-radius: var(--border-radius);
 }
 

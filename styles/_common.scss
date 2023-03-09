@@ -223,7 +223,7 @@
     }
 
     @media screen and (min-width: 992px) {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 20%));
+        grid-template-columns: repeat(auto-fit, minmax(170px, 20%));
     }
 
     .grid-col {
@@ -241,7 +241,7 @@
     .workflow-head,
     .workflow-body,
     .workflow-foot {
-        padding: 10px;
+        padding: 8px;
     }
 
     .workflow-head {
@@ -267,7 +267,7 @@
     .workflow-option {
         display: flex;
         flex-flow: row wrap;
-        margin: 0 -4px;
+        margin: -4px;
         list-style: none;
         flex-grow: 1;
 
@@ -280,6 +280,10 @@
 
                 .btn {
                     margin: 0 0 0 auto;
+                    [class^=zcIcon-], 
+                    [class*=" zcIcon-"] {
+                        font-size: 18px;
+                    }
                 }
             }
 
@@ -287,10 +291,15 @@
                 padding: 0;
                 width: auto;
                 height: auto;
-                color: var(--gray-text);
+                color: rgba(var(--text-color-rgb), 0.6);
 
                 &:hover {
                     color: var(--text-color);
+                }
+
+                [class^=zcIcon-], 
+                [class*=" zcIcon-"] {
+                    font-size: 14px;
                 }
             }
         }
@@ -389,43 +398,46 @@
         overflow: hidden;
         position: relative;
         padding-right: 25px;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
 
         .card-icon {
             position: absolute;
             top: 0;
             right: 0;
-            color: var(--gray-text);
-            font-size: 16px;
+            color: rgba(var(--text-color-rgb), 0.6);
+            font-size: 14px;
         }
     }
 
     .project-name {
         display: flex;
         align-items: center;
-        gap: 6px;
-        font-size: 12px;
-        color: var(--gray-text);
+        gap: 4px;
+        font-size: 11px;
+        line-height: 14px;
+        margin-bottom: 2px;
+        color: rgba(var(--text-color-rgb), 0.6);
 
         .status {
-            width: 7px;
-            height: 7px;
+            width: 6px;
+            height: 6px;
             flex-shrink: 0;
         }
     }
 
     .card-title {
         display: block;
-        font-size: 14px;
+        font-size: 12px;
+        line-height: 15px;
     }
 
     .tag-list {
-        margin: 0 -2px;
-        padding: 2px 0 4px;
+        margin: 0 -2px 5px;
+        padding: 0;
         list-style: none;
         display: flex;
         flex-flow: row wrap;
-        font-size: 11px;
+        font-size: 12px;
         line-height: 1;
         align-items: center;
 
@@ -434,10 +446,12 @@
         }
 
         .tag {
-            min-height: 10px;
-            min-width: 52px;
+            min-height: 6px;
+            min-width: 43px;
+            font-size: 10px;
+            line-height: 1;
             display: block;
-            padding: 2px 6px;
+            padding: 1px 4px;
             background: var(--cream);
             border-radius: var(--border-radius);
 
@@ -465,31 +479,34 @@
         list-style: none;
         display: flex;
         align-items: center;
-        font-size: 12px;
+        font-size: 10px;
+        line-height: 12px;
+        color: rgba(var(--text-color-rgb), 0.6);
         // color: #6a6f7a;
 
         li {
-            padding: 2px 5px;
+            padding: 2px 4px;
         }
 
         .meta-box {
             display: flex;
             align-items: center;
-            gap: 3px;
+            gap: 4px;
         }
 
         .icon {
-            font-size: 16px;
+            font-size: 14px;
         }
     }
 
     .date-created {
         display: inline-block;
-        font-size: 12px;
-        line-height: 14px;
-        padding: 8px;
-        border-radius: var(--border-radius);
-        background: var(--border-color);
+        font-size: 10px;
+        line-height: 12px;
+        padding: 3px 5px;
+        border-radius: 4px;
+        background: rgba(var(--text-color-rgb), 0.08);
+        color: rgba(var(--text-color-rgb), 0.5);
     }
 
     .card-foot {
@@ -497,6 +514,11 @@
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
-        padding: 8px 0 0;
+        padding: 5px 0 0;
+
+        .avatar {
+            width: 18px;
+            height: 18px;
+        }
     }
 }
