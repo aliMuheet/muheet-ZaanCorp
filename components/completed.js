@@ -128,7 +128,7 @@ export default function Completed(props) {
                                 </button>
                             </div>
                             <div className="input-wrap">
-                                <input type="text" placeholder="Enter Card Name" name="name" className="form-control" value={completedCardName} onChange={handleCompletedNameChange} />
+                                <textarea cols="30" rows="4" placeholder="Enter Card Name" name="name" className="form-control" value={completedCardName} onChange={handleCompletedNameChange}></textarea>
                             </div>
                             <div className="input-group">
                                 <div className="input-wrap">

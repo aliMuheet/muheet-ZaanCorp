@@ -266,7 +266,7 @@ export default function Inprocess(props) {
                                 </button>
                             </div>
                             <div className="input-wrap">
-                                <input type="text" placeholder="Enter Card Name" name="name" className="form-control" value={inprocessCardName} onChange={handleInprocessNameChange} />
+                                <textarea cols="30" rows="4" placeholder="Enter Card Name" name="name" className="form-control" value={inprocessCardName} onChange={handleInprocessNameChange}></textarea>
                             </div>
                             <div className="input-group">
                                 <div className="input-wrap">

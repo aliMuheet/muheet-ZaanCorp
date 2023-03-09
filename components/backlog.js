@@ -160,7 +160,7 @@ export default function Backlog(props) {
                                 </button>
                             </div>
                             <div className="input-wrap">
-                                <input type="text" placeholder="Enter Card Name" name="name" className="form-control" value={backlogCardName} onChange={handleBacklogNameChange} />
+                                <textarea cols="30" rows="4" placeholder="Enter Card Name" name="name" className="form-control" value={backlogCardName} onChange={handleBacklogNameChange}></textarea>
                             </div>
                             <div className="input-group">
                                 <div className="input-wrap">
